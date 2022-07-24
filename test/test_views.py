@@ -54,6 +54,5 @@ class TestLoginProcess(TestCase):
             )
         url = reverse('accounts:profile')
         self.assertRedirects(
-            response, reverse('accounts:login' + f'?next={url}', kwargs={'pk': 1, 'id': 1}), status_code=302,
-            target_status_code=200, fetch_redirect_response=True
+            response, reverse('accounts:login' + f'?next={url}', kwargs={'pk': 1, 'id': 1}),
             )
