@@ -1,6 +1,7 @@
 from django.urls import path, include
 import django.contrib.auth.urls
 from accounts import views
+from accounts.api.urls import urlpatterns as api_urls
 
 app_name = 'accounts'
 
@@ -10,3 +11,5 @@ urlpatterns = [
     path('register/', views.Register.as_view(), name='register'),
     path('profile/<int:pk>/', views.Profile.as_view(), name='profile'),
 ]
+
+urlpatterns += api_urls
